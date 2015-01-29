@@ -7,8 +7,8 @@ add_keywords = dict(
 )
 
 fhan = open('requirements.txt', 'rU')
-requires = fhan.readlines()
-print('We require: ', requires)
+requires = [ line.strip() for line in fhan.readlines() ]
+#print('We require: ', requires)
 
 setup(
         name='GistIt',
