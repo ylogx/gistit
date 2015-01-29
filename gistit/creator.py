@@ -1,5 +1,7 @@
 import sys
 import time
+import json
+import requests
 
 if sys.version_info >= (3,):
     import urllib.request as urllib2
@@ -27,6 +29,11 @@ class Creator:
                     }
                 }
         # Create request
+        values = json.dumps(values)
+        r = requests.post(url, values)
+        print(r, r.content)
+
+    def temp(self):
         data = urlparse.urlencode(values)
         data = data.encode('utf-8')
         req = urllib2.Request(url, data)
