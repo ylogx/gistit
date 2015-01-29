@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import sys
-import gistit.gistit
+import gistit.main
 
 try:
-    sys.exit(gistit.gistit.main())
+    sys.exit(gistit.main.main())
 except KeyboardInterrupt:
     sys.exit(1)

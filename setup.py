@@ -2,7 +2,7 @@ from distutils.core import setup
 
 add_keywords = dict(
     entry_points = {
-        'console_scripts': ['gistit = gistit.gistit:main'],
+        'console_scripts': ['gistit = gistit.main:main'],
     },
 )
 
