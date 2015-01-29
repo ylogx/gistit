@@ -6,6 +6,10 @@ add_keywords = dict(
     },
 )
 
+fhan = open('requirements.txt', 'rU')
+requires = fhan.readlines()
+print('We require: ', requires)
+
 setup(
         name='GistIt',
         description='GistIt helps create github gists quickly',
@@ -16,6 +20,7 @@ setup(
         author_email='me@shubhamchaudhary.in',
         url='https://github.com/shubhamchaudhary/gistit',
         long_description=open('README.txt').read(),
+        install_requires=requires,
         **add_keywords
 )
 
