@@ -13,6 +13,14 @@ pip3 install gistit
 #### Usage
 
 ```sh
+$ gistit -h
+usage: gistit [-h] [-f FILE] [-r | -u]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FILE, --file FILE  Use the specified file
+  -r, --private         Make the gist private
+  -u, --public          Make the gist public (DEFAULT)
 ```
 
 ```sh
