@@ -6,7 +6,7 @@ import os
 import platform
 import sys
 
-import creator
+import gistit.creator
 
 def stop_for_windows():
     ''' If on windows platform, stop and wait for input
@@ -51,7 +51,7 @@ def main():
     public = True   #args.public
     if args.private:
         public = False
-    creator_obj = creator.Creator()
+    creator_obj = gistit.creator.Creator()
     creator_obj.create(file_content, public=public, filename=filename)
 
 if __name__ == '__main__':
