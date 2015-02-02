@@ -31,7 +31,8 @@ class Creator:
         # Create request
         values = json.dumps(values)
         r = requests.post(url, values)
-        print(r, r.content)
+        jsoon = json.loads(r.content.decode())
+        return jsoon
 
     def temp(self):
         data = urlparse.urlencode(values)

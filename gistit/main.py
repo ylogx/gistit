@@ -36,6 +36,7 @@ def main():
     if args.file:
         filename = args.file
     elif len(otherthings) > 0:
+        #TODO Add support for full filelist
         filename = otherthings[0]
     else:
         print('FATAL: Filename not specified')
@@ -51,8 +52,12 @@ def main():
     public = True   #args.public
     if args.private:
         public = False
+    print('Uploading...')
     creator_obj = gistit.creator.Creator()
-    creator_obj.create(file_content, public=public, filename=filename)
+    jsoon = creator_obj.create(file_content, public=public, filename=filename)
+    #print(jsoon)
+    if 'html_url' in jsoon.keys():
+        print('Uploaded to the url: ', jsoon['html_url'])
 
 if __name__ == '__main__':
     try:
