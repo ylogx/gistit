@@ -46,6 +46,7 @@ def main():
     if statinfo.st_size < 1000000:
         fhan = open(filename, 'rU')
         file_content = fhan.read()
+        fhan.close()
     else:
         print('ERROR: File size exceeds specified limit of 1MB')
         return -1
