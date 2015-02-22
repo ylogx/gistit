@@ -41,9 +41,14 @@ def main():
     public = True   #args.public
     if args.private:
         public = False
-    print('Uploading...')
-    creator_obj = gistit.creator.Creator()
-    jsoon = creator_obj.create(content_to_post, public=public, filename=filename)
+    try:
+        print('Uploading...')
+        creator_obj = gistit.creator.Creator()
+        jsoon = creator_obj.create(content_to_post, public=public, filename=filename)
+    except:
+        print('Unexpected Error:', sys.exc_info()[0])
+        print('Details:', sys.exc_info()[1])
+        return -1
     #print(jsoon)
     if 'html_url' in jsoon.keys():
         print('Uploaded to the url: ', jsoon['html_url'])
@@ -75,5 +80,5 @@ if __name__ == '__main__':
     except:
         print('Unexpected Error:', sys.exc_info()[0])
         print('Details:', sys.exc_info()[1])
-        raise
+        #raise
 
