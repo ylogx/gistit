@@ -33,32 +33,42 @@ def main():
     #args = parser.parse_args()
     args, otherthings = parser.parse_known_args()
 
+    content_to_post = ''
+    filename = None
     if args.file:
         filename = args.file
+        content_to_post = get_file_content(filename)
     elif len(otherthings) > 0:
-        #TODO Add support for full filelist
-        filename = otherthings[0]
+        filename = otherthings[0]   #TODO: Add support for full filelist
+        content_to_post = get_file_content(filename)
     else:
-        print('FATAL: Filename not specified')
-        return -1
-    # Check that file conforms size limit of 1MB
-    statinfo = os.stat(filename)
-    if statinfo.st_size < 1000000:
-        fhan = open(filename, 'rU')
-        file_content = fhan.read()
-        fhan.close()
-    else:
-        print('ERROR: File size exceeds specified limit of 1MB')
-        return -1
+        content_to_post = input()
+
     public = True   #args.public
     if args.private:
         public = False
     print('Uploading...')
     creator_obj = gistit.creator.Creator()
-    jsoon = creator_obj.create(file_content, public=public, filename=filename)
+    jsoon = creator_obj.create(content_to_post, public=public, filename=filename)
     #print(jsoon)
     if 'html_url' in jsoon.keys():
         print('Uploaded to the url: ', jsoon['html_url'])
+    else:
+        return -2
+    return 0
+
+def get_file_content(filename):
+    # Check that file conforms size limit of 1MB
+    statinfo = os.stat(filename)
+    if statinfo.st_size < 1000000:
+        fhan = open(filename, 'rU')
+        content = fhan.read()
+        fhan.close()
+    else:
+        print('ERROR: File size exceeds specified limit of 1MB')
+        sys.exit(-1)
+    return content
+
 
 if __name__ == '__main__':
     try:
