@@ -21,7 +21,7 @@ class Creator:
             filename = 'gistit' + time.strftime("_%Y-%m-%d_%H%M")   # "%d/%m/%Y"
         values = {
                 'public' : public,
-                'description' : 'Created using gistit from PyPi',
+                'description' : 'Created using GistIt - http://is.gd/Gistit',
                 'files' : {
                     filename: {
                         'content': content
