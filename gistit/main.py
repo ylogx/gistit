@@ -36,7 +36,8 @@ def main():
         filename = otherthings[0]   #TODO: Add support for full filelist
         content_to_post = get_file_content(filename)
     else:
-        content_to_post = input()
+        input_list = sys.stdin.readlines()
+        content_to_post = "".join(input_list)
 
     public = True   #args.public
     if args.private:
