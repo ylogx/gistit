@@ -17,7 +17,7 @@ fhan.close()
 setup(
         name='GistIt',
         description='GistIt helps create github gists quickly',
-        version='0.0.2',
+        version='0.0.3',
         packages=['gistit'],
         license='GPLv3+',
         author='Shubham Chaudhary',
