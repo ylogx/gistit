@@ -52,7 +52,8 @@ def main():
         return -1
     #print(jsoon)
     if 'html_url' in jsoon.keys():
-        print('Uploaded to the url: ', jsoon['html_url'])
+        print('Upload Successful: ')
+        print(jsoon['html_url'])
     else:
         return -2
     return 0
