@@ -25,12 +25,12 @@ class test_online_functional(unittest.TestCase):
 
     def test_create_returns_something_not_null(self):
         jsoon = self.creator.create("")
-        self.assertTrue(jsoon != None)
+        self.assertIsNotNone(jsoon)
 
     def test_create_returns_html_url_in_json(self):
         jsoon = self.creator.create(self.dummy_content)
-        self.assertTrue('html_url' in jsoon.keys())
-        self.assertFalse('errors' in jsoon.keys())
+        self.assertIn('html_url', jsoon.keys())
+        self.assertNotIn('errors', jsoon.keys())
 
     def test_create_public_gist_by_default(self):
         jsoon = self.creator.create(self.dummy_content)
@@ -38,6 +38,6 @@ class test_online_functional(unittest.TestCase):
 
     def test_create_returns_error_in_json_for_empty_content(self):
         jsoon = self.creator.create("")
-        self.assertTrue('errors' in jsoon.keys())
+        self.assertIn('errors', jsoon.keys())
 
 unittest.main()
