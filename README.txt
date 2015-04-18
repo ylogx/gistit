@@ -1,5 +1,5 @@
-Definition
-=========
+GistIt [![Build Status](https://travis-ci.org/shubhamchaudhary/gistit.svg)](https://travis-ci.org/shubhamchaudhary/gistit)
+======
 
 Create Github gists of files using one single command
 Available easily from PyPi
