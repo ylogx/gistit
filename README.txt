@@ -22,6 +22,3 @@ optional arguments:
   -r, --private         Make the gist private
   -u, --public          Make the gist public (DEFAULT)
 ```
-
-```sh
-```
