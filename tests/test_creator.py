@@ -8,7 +8,7 @@ import os
 import shutil
 import sys
 
-sys.path.append('..')      # Needed to import code
+sys.path.append('..')  # Needed to import code
 
 from gistit.creator import Creator
 
@@ -39,5 +39,6 @@ class test_online_functional(unittest.TestCase):
     def test_create_returns_error_in_json_for_empty_content(self):
         jsoon = self.creator.create("")
         self.assertIn('errors', jsoon.keys())
+
 
 unittest.main()
