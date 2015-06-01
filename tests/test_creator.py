@@ -40,5 +40,5 @@ class test_online_functional(unittest.TestCase):
         jsoon = self.creator.create("")
         self.assertIn('errors', jsoon.keys())
 
-
-unittest.main()
+if __name__ == '__main__':
+    unittest.main()

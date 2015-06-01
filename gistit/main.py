@@ -5,8 +5,7 @@ import argparse
 import os
 import platform
 import sys
-
-import gistit.creator
+from . import Creator
 
 
 def stop_for_windows():
@@ -54,7 +53,7 @@ def main():
         public = False
     try:
         print('Uploading...')
-        creator_obj = gistit.creator.Creator()
+        creator_obj = Creator()
         jsoon = creator_obj.create(content_to_post,
                                    public=public,
                                    filename=filename)
