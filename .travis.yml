@@ -18,11 +18,11 @@ install:
   - pip install -r requirements-dev.txt
   - pip install coveralls
 script:
-  - nosetests
+  - SKIP_SLOW_TESTS=0 nosetests
 after_script:
   - make install
   - yes | pip uninstall gistit
   - pip install gistit
 after_success:
-  - make coverage
+  - SKIP_SLOW_TESTS=0 make coverage
   - coveralls

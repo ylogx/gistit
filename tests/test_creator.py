@@ -8,8 +8,6 @@ import os
 import shutil
 import sys
 
-sys.path.append('..')  # Needed to import code
-
 from gistit.creator import Creator
 
 
