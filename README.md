@@ -3,7 +3,8 @@ GistIt
 
 [![Build Status](https://travis-ci.org/shubhamchaudhary/gistit.svg)](https://travis-ci.org/shubhamchaudhary/gistit) [![Coverage Status](https://coveralls.io/repos/shubhamchaudhary/gistit/badge.svg)](https://coveralls.io/r/shubhamchaudhary/gistit)
 
-[![Stories in Ready](https://badge.waffle.io/shubhamchaudhary/gistit.png?label=ready&title=Ready)](https://waffle.io/shubhamchaudhary/gistit)?GistIt
+[![Stories in Ready](https://badge.waffle.io/shubhamchaudhary/gistit.png?label=ready&title=Ready)](https://waffle.io/shubhamchaudhary/gistit) [![Stories in progress](https://badge.waffle.io/shubhamchaudhary/gistit.png?label=in progress&title=In Progress)](https://waffle.io/shubhamchaudhary/gistit)
+
 
 Create Github gists of files using one single command
 Available easily from PyPi
