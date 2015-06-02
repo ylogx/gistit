@@ -13,12 +13,16 @@ matrix:
     - python: 2.6
     - python: 2.7
     - python: pypy
-before_install:
-  - pip install -r requirements.txt
 install:
-  - python setup.py sdist
-# - pip install dist/gistit*.tar.gz
+  - pip install -r requirements.txt
+  - pip install -r requirements-dev.txt
+  - pip install coveralls
 script:
-  - cd tests && make
+  - nosetests
 after_script:
+  - make install
+  - yes | pip uninstall gistit
   - pip install gistit
+after_success:
+  - make coverage
+  - coveralls

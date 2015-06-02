@@ -1,0 +1,6 @@
+requests==2.5.1
+
+nose
+mock
+coverage
+unittest2
